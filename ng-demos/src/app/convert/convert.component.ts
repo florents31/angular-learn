@@ -7,13 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConvertComponent implements OnInit {
 
+  inputUnit = 'km';
+
+  outputUnit = 'miles';
+
+  globalUnits = [ "km", "m", "mm", "miles", "yards", "feet" ];
+
+  input= "0";
+
+
   constructor() { }
 
   ngOnInit() {
   }
 
   test(){
-    return globalConvert(12, 'km', 'miles')
+    return globalConvert(12, 'km', 'miles');
+  }
+
+  convert(){
+    return globalConvert(this.input, this.inputUnit, this.outputUnit);
   }
 
 }

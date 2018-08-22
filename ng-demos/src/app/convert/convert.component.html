@@ -1,3 +1,24 @@
-<p>
-  convert works! {{test()}}
-</p>
+<div>
+  <form class="inline" name="x">
+
+    <input type = "number" [(ngModel)]="input">
+
+    <select [(ngModel)]="inputUnit" [ngModelOptions]="{standalone:true}">
+      <option *ngFor="let u of globalUnits" [ngValue]="u">{{u}}</option>
+    </select>
+
+  </form>
+
+
+
+
+</div>
+
+
+
+<br/>
+{{convert(input, inputUnit, outputUnit)}}
+
+<select [(ngModel)]="outputUnit">
+  <option *ngFor="let u of globalUnits" [ngValue]="u">{{u}}</option>
+</select>
