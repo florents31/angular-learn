@@ -1,0 +1,50 @@
+<p>
+Mustaches can call functions {{ getName()}}
+</p>
+
+<nav [textContent]="'Meuh!'"> Hello  </nav>
+
+<nav [textContent]="getContent()"> </nav>
+
+
+<ul>Users :
+  <li *ngFor="let u of users">{{u}}</li>
+
+</ul>
+
+
+<div *ngIf=" users.length > 3">
+
+  There is a lot of users
+
+</div>
+
+
+<!-- Condition is a function call -->
+<div *ngIf="condition()">
+
+  There is a lot of users
+
+</div>
+
+<div class="impressive"> This is impressive div</div>
+
+<div [className]="getImpressiveStyle"> This is also impressive div</div>
+
+<!-- ngClass is not a standard JS property. It's an Angular 'directive' -->
+<div [ngClass]="{banana:users.length>3}"> This is a conditional class</div>
+
+<!-- we can declare a variable on a component -->
+
+<div #friend>Hello my friend</div>
+
+<div>The content was :{{friend.textContent}} </div>
+
+
+<input type="text" value="I am a data" #myInput>
+
+<div> Value is : {{myInput.value}}</div>
+
+
+<!-- () are events, events will recompule all the pseudo HTML -->
+<button (click)="clearUsers()">delete people</button>
