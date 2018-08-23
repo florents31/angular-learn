@@ -7,10 +7,10 @@ type Ingredient = {
 
 @Component({
   selector: 'app-recipe',
-  templateUrl: './recipe.component.html',
-  styleUrls: ['./recipe.component.css']
+  templateUrl: './receipe.component.html',
+  styleUrls: ['./receipe.component.css']
 })
-export class RecipeComponent implements OnInit {
+export class ReceipeComponent implements OnInit {
 
   ingredients:Ingredient[] = [
     {name:'flour', done:false},
