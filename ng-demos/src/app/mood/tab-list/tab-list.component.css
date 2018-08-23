@@ -1,0 +1,13 @@
+div{
+  display: flex;
+  flex-direction: row;
+}
+
+span{
+  width: 30%;
+  text-align: center;
+  font-family: Beirut;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border: solid thick #19ffbb;
+}
