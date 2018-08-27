@@ -1,0 +1,7 @@
+<div>
+  <h2>Liste des utilisateurs</h2>
+  <hr>
+  <app-user *ngFor="let u of this.service.users" [user]="u" (click)="onClick(u)"></app-user>
+  <hr>
+  <span *ngIf="current !=undefined"> <strong >loggedIn: </strong> {{current.name}}</span>
+</div>

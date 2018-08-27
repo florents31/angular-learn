@@ -1,0 +1,13 @@
+<div>
+
+  <h2>Liste des Topics</h2>
+  <hr>
+
+  <app-topic *ngFor="let t of this.service.topics" [topic]="t" (click)="onClick(t)"> </app-topic>
+
+  <hr>
+
+  <span *ngIf="current != undefined"  >{{}}</span>
+
+
+</div>

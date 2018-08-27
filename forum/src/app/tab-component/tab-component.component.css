@@ -1,0 +1,22 @@
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+span{
+  width: 200px;
+  border: dotted purple;
+  padding: 40px;
+  margin: auto;
+  text-align: center;
+  background: lavenderblush;
+  border-radius: 30px;
+
+
+  font-family: 'Shadows Into Light', cursive;
+
+  font-family: 'Monoton', cursive;
+
+  font-size: 260%;
+
+}
