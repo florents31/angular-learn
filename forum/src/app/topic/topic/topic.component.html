@@ -1,3 +1,18 @@
 <p>
   {{this.topic.title}}
 </p>
+
+
+<div *ngIf="this.topic === service.selectedTopic">
+
+  <form (ngSubmit)="onSubmit(this.service.selectedTopic.id)">
+    <input type="text" name="newComment" [(ngModel)]="newContent">
+    <button>OK</button>
+  </form>
+
+  <ul *ngFor="let c of this.topic.comments">
+    {{c.user? c.user.name : 'Anonymous'}} - {{c.content}}
+
+
+  </ul>
+</div>

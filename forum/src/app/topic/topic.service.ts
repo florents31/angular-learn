@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {UserService} from "../user/user.service";
 
 
 export interface User {
@@ -41,10 +42,12 @@ export class TopicService {
 
   selectedTopic;
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, public service: UserService) {
   }
 
   topics: Topic[] = [];
+
+  newComment: IComment;
 
   fetchTopics() {
     this.http.get<any[]>('http://localhost:8000/api/topics')
@@ -59,6 +62,19 @@ export class TopicService {
     return this.selectedTopic.comments;
   }
 
+  createComment(newContent, topicId){
+
+    this.newComment={
+      id:-1,
+      content:newContent,
+      user:this.service.loggedUser,
+      score:0
+    }
+
+
+  this.http.post<any>('http://localhost:8000/api/comments/topic/'+topicId, this.newComment).subscribe(r =>console.log(r));
+
+  }
 }
 
 

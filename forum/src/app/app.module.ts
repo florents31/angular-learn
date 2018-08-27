@@ -8,6 +8,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { TopicComponent } from './topic/topic/topic.component';
 import { TabComponentComponent } from './tab-component/tab-component.component';
 import { TopicListComponent } from './topic-list/topic-list.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TopicListComponent } from './topic-list/topic-list.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

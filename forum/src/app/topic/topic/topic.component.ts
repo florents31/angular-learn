@@ -10,11 +10,19 @@ export class TopicComponent implements OnInit {
 
   @Input()topic:any;
 
+  newContent = "";
+
   constructor(public service: TopicService) {
+
+    service.selectedTopic = this.topic
 
   }
 
   ngOnInit() {
+  }
+
+  onSubmit(topicId) {
+    this.service.createComment(this.newContent, topicId);
   }
 
 }
